@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Creado por Darío Pérez (aka M0B)
@@ -27,34 +28,41 @@ sports="https://intranet.upv.es/pls/soalu/sic_depact.HSemActividades?p_campus=V&
 groups="groups.txt"
 
 function waiting(){
-    echo -e "\n${grayColour}[!] Esperando hasta el sábado a las 10:01 am para reservar${endColour}"
-    #Este while se va estar ejecutando hasta que sea sábado 10:01 a.m. entonces llamará a la función booking
+    echo -e "\n${grayColour}[!] Esperando hasta el sábado a las 09:59 am para reservar${endColour}"
+    #Este while se va estar ejecutando hasta que sea sábado 09:59 a.m. entonces llamará a la función booking cada 10 segundos
     while true; do
-        if [ "$(date +\%A)" = "sábado" ] || [ "$(date +\%A)" = "Saturday" ] && [ "$(date +\%H:%M)" = "10:01" ]; then
-            booking
+        sudo timedatectl set-timezone Europe/Madrid > /dev/null 2>&1
+	if [ "$(date +\%A)" = "sábado" ] || [ "$(date +\%A)" = "Saturday" ] && [ "$(date +\%H:%M)" = "09:59" ]; then
+			for ((i = 1; i <= 8; i++)); do
+				booking
+				sleep 15
+			done
         fi
         sleep 60
     done
 }
 
+function hour(){
+	echo -ne "\n${grayColour}[$(date | awk '{print $4}')] ${endColour}"
+}
 function booking(){
+sudo timedatectl set-timezone Europe/Madrid > /dev/null 2>&1
     if [ -e "$credentials" ] && [ -e "$groups" ]; then
         while IFS=' ' read -r alias _ dni _ password && IFS=' ' read -r line <&3; do
-            echo -e "\n${blueColour}[*] Realizando reservas para $alias ...${endColour}\n"
+            hour ; echo -e "${blueColour}[*] Realizando reservas para $alias ...${endColour}"
             curl -X POST "$log_in" -d "dni=$dni&clau=$password" -c "${alias}_cookies.txt" > /dev/null 2>&1
 
             IFS=' ' read -ra numbers <<< "$line"
             for number in "${numbers[@]}"; do
-                echo -e "${yellowColour}[!] Reservando grupo $number ...${endColour}"
+                hour ; echo -e "\t${yellowColour}[!] Reservando grupo $number ...${endColour}"
                 book_url="https://intranet.upv.es/pls/soalu/""$(curl -s -X GET "$sports" -b "${alias}_cookies.txt" | grep -e "MUS0$number" | awk '{print $3}' | sed 's/href="//g; s/"//g')"
                 curl -s -X GET "$book_url" -b "${alias}_cookies.txt" > /dev/null 2>&1
                 book_confirmation_url=$(curl -s -X GET "$sports" -b "${alias}_cookies.txt" | grep -e "MUS0$number")
                 if [[ "$book_confirmation_url" == *"inscrito"* ]]; then
-                    echo -e "${greenColour}[+] ¡Grupo $number reservado con éxito! ${endColour}\n"
+                    hour ; echo -e "\t${greenColour}[+] ¡Grupo $number reservado con éxito! ${endColour}"
                 else
-                    echo -e "${redColour}[!] Fallo al realizar la reserva del grupo $number  ${endColour}\n"
-                fi 
-                sleep 1
+                    hour ; echo -e "\t${redColour}[!] Fallo al realizar la reserva del grupo $number  ${endColour}"
+                fi
             done
             rm "${alias}_cookies.txt" 2>/dev/null
         done < "$credentials" 3< "$groups"
