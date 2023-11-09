@@ -62,7 +62,9 @@ Para utilizar el script, sigue estos pasos:
 
 Puedes añadir más cuentas de la intranet de la UPV al archivo `credentials.txt`. Cada cuenta debe estar asignada a una línea del archivo `groups.txt`. El script procesará todas las cuentas en secuencia del archivo `credentials.txt` y realizará las reservas para cada línea correspondiente del archivo `groups.txt`. Por ejemplo, para la línea 3 de `credentials.txt` se harán las reservas de la línea 3 de `groups.txt`.
 
-## Ejecución en Segundo Plano con Registro de Output
+## Ejecución en Segundo Plano
+
+¡Ahí lo tienes! Puedes copiar y pegar esto directamente en tu README.md. ¿Hay algo más en lo que pueda ayudarte?
 
 Para ejecutar el script en segundo plano y guardar el output en un archivo de registro (`log.txt`), puedes utilizar el siguiente comando:
 
