@@ -1,4 +1,4 @@
-# MultiGym Booker - Automatizador de Reservas de Grupos Deportivos UPV
+# MultiGym Booker - Automatizador de Reservas de Gimnasio UPV
 
 **Creado por Darío Pérez (aka M0B)**
 
@@ -61,6 +61,34 @@ Para utilizar el script, sigue estos pasos:
 ## Añadir Más Cuentas
 
 Puedes añadir más cuentas de la intranet de la UPV al archivo `credentials.txt`. Cada cuenta debe estar asignada a una línea del archivo `groups.txt`. El script procesará todas las cuentas en secuencia del archivo `credentials.txt` y realizará las reservas para cada línea correspondiente del archivo `groups.txt`. Por ejemplo, para la línea 3 de `credentials.txt` se harán las reservas de la línea 3 de `groups.txt`.
+
+¡Entendido! Aquí está la sección actualizada para tu README.md:
+
+```markdown
+...
+
+## Ejecución en Segundo Plano con Registro de Output
+
+Para ejecutar el script en segundo plano y guardar el output en un archivo de registro (`log.txt`), puedes utilizar el siguiente comando:
+
+```bash
+./multiGymBooker.sh > log.txt 2>&1 &
+```
+
+Además, para desvincular el proceso del terminal actual y evitar que se detenga cuando cierras la terminal, puedes usar el comando `disown` después de ejecutar el script:
+
+```bash
+disown
+```
+
+Esto permite que el script continúe ejecutándose incluso después de cerrar la terminal.
+
+...
+
+Este README.md ha sido actualizado por ChatGPT.
+```
+
+Esto debería cubrir cómo ejecutar el script en segundo plano y desvincularlo del terminal. Si tienes alguna otra solicitud o pregunta, házmelo saber.
 
 ## Horarios
 
