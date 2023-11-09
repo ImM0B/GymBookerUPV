@@ -1,4 +1,4 @@
-# MultiGym Booker - Automatizador de Reservas de Gimnasio UPV
+# MultiGym Booker - Script para reservar el gimnasio de la UPV
 
 **Creado por Darío Pérez (aka M0B)**
 
