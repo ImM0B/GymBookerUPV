@@ -32,7 +32,7 @@ Antes de usar este script, asegúrate de tener los siguientes requisitos:
     Alias : DNI(solo números) : Contraseña 
     ```
 
-  - `groups.txt`: Archivo que contiene los números de grupo que deseas reservar (Máximo 6 por cuenta). Debe seguir el formato:
+  - `groups.txt`: Archivo que contiene los números de grupo que deseas reservar (Máximo 6 por cuenta). Los números tienen que ser de dos dígitos siempre, siguiendo el siguiente formato:
 
     ```
     NúmeroGrupo1 NúmeroGrupo2 NúmeroGrupo3 ...
