@@ -64,8 +64,6 @@ Puedes añadir más cuentas de la intranet de la UPV al archivo `credentials.txt
 
 ## Ejecución en Segundo Plano
 
-¡Ahí lo tienes! Puedes copiar y pegar esto directamente en tu README.md. ¿Hay algo más en lo que pueda ayudarte?
-
 Para ejecutar el script en segundo plano y guardar el output en un archivo de registro (`log.txt`), puedes utilizar el siguiente comando:
 
    ```bash
