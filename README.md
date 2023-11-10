@@ -2,14 +2,14 @@
 
 **Creado por Darío Pérez (aka M0B)**
 
-Este script de bash te permite automatizar la reserva de grupos deportivos en la Universidad Politécnica de Valencia (UPV). Simplemente sigue las instrucciones a continuación para comenzar a utilizarlo.
+Este script de bash te permite automatizar la reserva del gimnasio en la UPV. Simplemente sigue las instrucciones a continuación para comenzar a utilizarlo.
 
 ## Clonación del Repositorio
 
 Para obtener este script y los archivos necesarios, puedes clonar este repositorio utilizando el siguiente comando `git clone` en tu terminal:
 
 ```bash
-git clone https://github.com/ImM0B/MultiGymBooker.git
+git clone https://github.com/ImM0B/GymBookerUPV.git
 ```
 
 ## Requisitos Previos
@@ -76,7 +76,7 @@ Además, para desvincular el proceso del terminal actual y evitar que se detenga
    disown
    ````
 
-Esto permite que el script continúe ejecutándose incluso después de cerrar la terminal. Si deseas mantener el script en ejecución semana tras semana puedes usar una instancia de Google Cloud por ejemplo.
+Esto permite que el script continúe ejecutándose incluso después de cerrar la terminal.  Si deseas mantener el script en ejecución en tu máquina sin apagarla puedes usar Google Cloud por ejemplo.
 
 ## Horarios
 
@@ -86,15 +86,15 @@ Aquí se muestra una tabla de horarios asignados a cada número de grupo:
 ·-----------------------------------------------------------------·
 | Horario         | Lunes | Martes | Miércoles | Jueves | Viernes |
 |-----------------|-------|--------|-----------|--------|---------|
-| 07:30-08:30     |   1   |   15   |   29      |   43   |   57    |
-| 08:30-09:30     |   2   |   16   |   30      |   44   |   58    |
-| 09:30-10:30     |   3   |   17   |   31      |   45   |   59    |
-| 11:30-12:30     |   4   |   18   |   32      |   46   |   60    |
-| 12:30-13:30     |   5   |   19   |   33      |   47   |   61    |
-| 13:30-14:30     |   6   |   20   |   34      |   48   |   62    |
-| 14:30-15:30     |   7   |   21   |   35      |   49   |   63    |
-| 15:30-16:30     |   8   |   22   |   36      |   50   |   64    |
-| 16:30-17:30     |   9   |   23   |   37      |   51   |   65    |
+| 07:30-08:30     |  01   |   15   |   29      |   43   |   57    |
+| 08:30-09:30     |  02   |   16   |   30      |   44   |   58    |
+| 09:30-10:30     |  03   |   17   |   31      |   45   |   59    |
+| 11:30-12:30     |  04   |   18   |   32      |   46   |   60    |
+| 12:30-13:30     |  05   |   19   |   33      |   47   |   61    |
+| 13:30-14:30     |  06   |   20   |   34      |   48   |   62    |
+| 14:30-15:30     |  07   |   21   |   35      |   49   |   63    |
+| 15:30-16:30     |  08   |   22   |   36      |   50   |   64    |
+| 16:30-17:30     |  09   |   23   |   37      |   51   |   65    |
 | 17:30-18:30     |  10   |   24   |   38      |   52   |   66    |
 | 18:30-19:30     |  11   |   25   |   39      |   53   |   67    |
 | 19:30-20:30     |  12   |   26   |   40      |   54   |   68    |
