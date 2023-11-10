@@ -76,7 +76,7 @@ Además, para desvincular el proceso del terminal actual y evitar que se detenga
    disown
    ````
 
-Esto permite que el script continúe ejecutándose incluso después de cerrar la terminal.
+Esto permite que el script continúe ejecutándose incluso después de cerrar la terminal. Si deseas mantener el script en ejecución semana tras semana puedes usar una instancia de Google Cloud por ejemplo.
 
 ## Horarios
 
@@ -102,5 +102,3 @@ Aquí se muestra una tabla de horarios asignados a cada número de grupo:
 | 21:30-22:30     |  14   |   28   |   42      |   56   |   70    |
 ·-----------------------------------------------------------------·
 ```
-
-Este README.md ha sido creado por ChatGPT.
